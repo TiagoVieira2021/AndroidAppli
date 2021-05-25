@@ -1,5 +1,8 @@
 package com.backend.AndroidApp.model;
 
+import com.backend.AndroidApp.view.CustomJsonView;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -12,13 +15,21 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonView({CustomJsonView.CategoryPageProduct.class, CustomJsonView.ProductPage.class})
     private int id;
+
+    @JsonView({CustomJsonView.CategoryPageProduct.class, CustomJsonView.ProductPage.class})
     private String name;
+
+    @JsonView(CustomJsonView.ProductPage.class)
     private String description;
     private boolean online;
     private Date created;
     private Date modified;
     private Date deleted;
+
+    @JsonView({CustomJsonView.CategoryPageProduct.class, CustomJsonView.ProductPage.class})
+    private String imagePath;
 
     @ManyToOne
     @JoinColumn(name = "createdBy")
@@ -30,6 +41,7 @@ public class Product {
             joinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "id_category", referencedColumnName = "id")
     )
+    @JsonIgnore
     private List<Category> categoryList;
 
     @OneToMany(mappedBy = "product")
@@ -37,6 +49,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "id_quantityType")
+    @JsonView(CustomJsonView.ProductPage.class)
     private QuantityType quantityType;
 
     public int getId() {
@@ -117,5 +130,21 @@ public class Product {
 
     public void setOrdersProductList(List<OrdersProduct> ordersProductList) {
         this.ordersProductList = ordersProductList;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public QuantityType getQuantityType() {
+        return quantityType;
+    }
+
+    public void setQuantityType(QuantityType quantityType) {
+        this.quantityType = quantityType;
     }
 }

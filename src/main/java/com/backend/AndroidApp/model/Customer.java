@@ -12,8 +12,19 @@ public class Customer extends Users {
     @OneToMany(mappedBy = "customer")
     private List<Orders> ordersList;
 
+    @OneToMany(mappedBy = "customer")
+    private List<Cart> cartList;
+
     public List<Orders> getOrdersList() {
         return ordersList;
+    }
+
+    public List<Cart> getCartList() {
+        return cartList;
+    }
+
+    public void setCartList(List<Cart> cartList) {
+        this.cartList = cartList;
     }
 
     public void setOrdersList(List<Orders> ordersList) {

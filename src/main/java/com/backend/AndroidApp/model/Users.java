@@ -18,7 +18,7 @@ public abstract class Users {
     private String firstname;
     private String lastname;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_role",
             joinColumns = @JoinColumn(name = "id_customer", referencedColumnName = "id"),

@@ -1,5 +1,7 @@
 package com.backend.AndroidApp.model;
 
+import com.backend.AndroidApp.view.CustomJsonView;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -11,9 +13,13 @@ public class QuantityType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @JsonView(CustomJsonView.ProductPage.class)
     private String type;
+    @JsonView(CustomJsonView.ProductPage.class)
     private String button1;
+    @JsonView(CustomJsonView.ProductPage.class)
     private String button2;
+    @JsonView(CustomJsonView.ProductPage.class)
     private String button3;
 
     public int getId() {

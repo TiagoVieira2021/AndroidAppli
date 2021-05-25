@@ -23,10 +23,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
@@ -39,6 +35,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -57,6 +58,22 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<profiles>
+
+		<profile>
+			<id>developpeur</id>
+			<properties>
+				<server_port>8080</server_port>
+				<database_host>localhost</database_host>
+				<database_port>3306</database_port>
+				<database_name>android</database_name>
+				<database_username>root</database_username>
+				<jwt_secret>azerty123</jwt_secret>
+			</properties>
+		</profile>
+
+	</profiles>
 
 	<build>
 		<plugins>

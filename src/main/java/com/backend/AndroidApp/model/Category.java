@@ -1,5 +1,10 @@
 package com.backend.AndroidApp.model;
 
+import com.backend.AndroidApp.view.CustomJsonView;
+import com.fasterxml.jackson.annotation.JsonView;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -11,10 +16,19 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonView(CustomJsonView.CategoryHomepage.class)
     private int id;
+
+    @JsonView(CustomJsonView.CategoryHomepage.class)
     private String name;
 
+    @JsonView(CustomJsonView.CategoryHomepage.class)
+    private String imagePath;
+
+    private boolean showHome;
+
     @ManyToMany(mappedBy = "categoryList")
+    @Where(clause = "online = 1")
     private List<Product> productList;
 
     public int getId() {
@@ -39,5 +53,21 @@ public class Category {
 
     public void setProductList(List<Product> productList) {
         this.productList = productList;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public boolean isShowHome() {
+        return showHome;
+    }
+
+    public void setShowHome(boolean showHome) {
+        this.showHome = showHome;
     }
 }
