@@ -1,5 +1,7 @@
 package com.backend.AndroidApp.model;
 
+import com.backend.AndroidApp.view.CustomJsonView;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -11,8 +13,10 @@ public class OrderStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonView(CustomJsonView.CustomerOrders.class)
     private int id;
 
+    @JsonView(CustomJsonView.CustomerOrders.class)
     private String status;
 
     public int getId() {

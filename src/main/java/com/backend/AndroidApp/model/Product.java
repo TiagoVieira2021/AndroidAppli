@@ -15,10 +15,10 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonView({CustomJsonView.CategoryPageProduct.class, CustomJsonView.ProductPage.class})
+    @JsonView({CustomJsonView.CategoryPageProduct.class, CustomJsonView.ProductPage.class, CustomJsonView.ProductCart.class})
     private int id;
 
-    @JsonView({CustomJsonView.CategoryPageProduct.class, CustomJsonView.ProductPage.class})
+    @JsonView({CustomJsonView.CategoryPageProduct.class, CustomJsonView.ProductPage.class, CustomJsonView.ProductCart.class})
     private String name;
 
     @JsonView(CustomJsonView.ProductPage.class)
@@ -28,7 +28,7 @@ public class Product {
     private Date modified;
     private Date deleted;
 
-    @JsonView({CustomJsonView.CategoryPageProduct.class, CustomJsonView.ProductPage.class})
+    @JsonView({CustomJsonView.CategoryPageProduct.class, CustomJsonView.ProductPage.class, CustomJsonView.ProductCart.class})
     private String imagePath;
 
     @ManyToOne
@@ -49,7 +49,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "id_quantityType")
-    @JsonView(CustomJsonView.ProductPage.class)
+    @JsonView({CustomJsonView.ProductPage.class, CustomJsonView.ProductCart.class})
     private QuantityType quantityType;
 
     public int getId() {

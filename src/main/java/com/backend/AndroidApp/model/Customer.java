@@ -1,5 +1,7 @@
 package com.backend.AndroidApp.model;
 
+import com.backend.AndroidApp.view.CustomJsonView;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -10,9 +12,11 @@ import java.util.List;
 public class Customer extends Users {
 
     @OneToMany(mappedBy = "customer")
+    @JsonView(CustomJsonView.CustomerOrders.class)
     private List<Orders> ordersList;
 
     @OneToMany(mappedBy = "customer")
+    @JsonView(CustomJsonView.ProductCart.class)
     private List<Cart> cartList;
 
     public List<Orders> getOrdersList() {

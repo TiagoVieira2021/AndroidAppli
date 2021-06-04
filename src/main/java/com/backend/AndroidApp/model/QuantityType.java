@@ -13,7 +13,7 @@ public class QuantityType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @JsonView(CustomJsonView.ProductPage.class)
+    @JsonView({CustomJsonView.ProductPage.class, CustomJsonView.ProductCart.class})
     private String type;
     @JsonView(CustomJsonView.ProductPage.class)
     private String button1;

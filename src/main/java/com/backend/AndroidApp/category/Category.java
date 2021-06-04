@@ -1,9 +1,8 @@
-package com.backend.AndroidApp.model;
+package com.backend.AndroidApp.category;
 
+import com.backend.AndroidApp.model.Product;
 import com.backend.AndroidApp.view.CustomJsonView;
 import com.fasterxml.jackson.annotation.JsonView;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
