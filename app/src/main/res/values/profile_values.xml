@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_firstname">Nom</string>
+    <string name="profile_lastname">Prénom</string>
+    <string name="profile_email">Email</string>
+    <string name="profile_edit_password">Mot de passe</string>
+    <string name="profile_edit_password_confirm">Confirmez mot de passe</string>
+</resources>

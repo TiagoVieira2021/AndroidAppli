@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: commons-io:commons-io:2.9.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.9.0/9cb4ce5672f6db9eb0ef6b44910e1ed96fc50e5e/commons-io-2.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.9.0/a58001f05fab9363202ac08dc51c68b0db6df98c/commons-io-2.9.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.9.0/76292255c978f43d6cb5fbe1e13f20fecd87103d/commons-io-2.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.fragment.FragmentProfile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                app:layout_constraintBottom_toBottomOf="@id/profile_layout_firstname"
+                app:layout_constraintLeft_toRightOf="@id/vg5"
+                app:layout_constraintTop_toTopOf="@id/profile_layout_firstname" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profile_layout_firstname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/profile_firstname"
+                app:layout_constraintLeft_toRightOf="@id/imageView_name"
+                app:layout_constraintRight_toRightOf="@id/vg50"
+                app:layout_constraintTop_toTopOf="@id/hg30">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_edit_firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profile_layout_lastname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/profile_lastname"
+                app:layout_constraintBottom_toBottomOf="@id/profile_layout_firstname"
+                app:layout_constraintLeft_toRightOf="@id/vg55"
+                app:layout_constraintRight_toRightOf="@id/vg95"
+                app:layout_constraintTop_toTopOf="@id/profile_layout_firstname">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_edit_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ImageView
+                android:id="@+id/imageView_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_baseline_email_24"
+                app:layout_constraintBottom_toBottomOf="@id/profile_layout_email"
+                app:layout_constraintLeft_toRightOf="@id/vg5"
+                app:layout_constraintTop_toTopOf="@id/profile_layout_email" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/profile_layout_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:hint="@string/profile_email"
+                app:layout_constraintLeft_toRightOf="@id/imageView_name"
+                app:layout_constraintRight_toRightOf="@id/vg95"
+                app:layout_constraintTop_toBottomOf="@id/profile_layout_firstname">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profile_edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_add_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintLeft_toRightOf="@id/vg5"
+                app:layout_constraintTop_toBottomOf="@id/profile_layout_email">
+
+                <ImageView
+                    android:id="@+id/imageView_profile_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_add_to_photos_24" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/profile_card_photo"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    app:cardElevation="5dp"
+                    android:layout_marginVertical="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/profile_selected_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:paddingBottom="5dp"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <Button
+                    android:id="@+id/profile_not_selected"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Aucune photo choisie"
+                    android:textAllCaps="false" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView_profile_pw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_vpn_key_24"
+                app:layout_constraintLeft_toRightOf="@id/vg5"
+                app:layout_constraintTop_toBottomOf="@id/profile_add_photo"/>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/profile_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintLeft_toRightOf="@id/imageView_profile_pw"
+                app:layout_constraintTop_toTopOf="@id/imageView_profile_pw"
+                app:layout_constraintBottom_toBottomOf="@id/imageView_profile_pw"/>
+
+            <LinearLayout
+                android:id="@+id/profile_change_pw"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@id/vg5"
+                app:layout_constraintRight_toLeftOf="@id/vg95"
+                app:layout_constraintTop_toBottomOf="@id/profile_switch">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/profile_layout_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/profile_edit_password">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profile_edit_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/profile_layout_password_confirm"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/profile_edit_password_confirm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profile_edit_password_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/profile_modify_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Modifier"
+                app:layout_constraintRight_toRightOf="@id/vg95"
+                app:layout_constraintTop_toBottomOf="@id/profile_change_pw" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg95"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/hg30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.15" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vg55"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.55" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/hg90"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.95" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

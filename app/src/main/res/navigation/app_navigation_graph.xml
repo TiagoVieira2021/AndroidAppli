@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation_graph"
+    app:startDestination="@id/fragmentShop">
+
+    <fragment
+        android:id="@+id/fragmentShop"
+        android:name="lu.letsfruit.eshop.controller.fragment.FragmentShop"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="lu.letsfruit.eshop.controller.fragment.FragmentProfile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fragmentCart"
+        android:name="lu.letsfruit.eshop.controller.fragment.FragmentCart"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+</navigation>
